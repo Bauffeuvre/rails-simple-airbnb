@@ -12,6 +12,34 @@
 @import "components/index";
 @import "pages/index";
 
-.navbar {
+
+// Navbar
+
+.collapse {
   display: flex;
+  justify-content: flex-end;
+  padding-right: 8px;
 }
+
+.ml-auto {
+  display: flex;  
+  padding-right: 8px;
+}
+
+.form-inline {
+  display: flex;
+  padding-right: 8px;
+  // margin-right: 8px;
+}
+
+.form-control {
+  margin-right: 8px;
+  
+}
+
+.navbar-brand {
+  margin-left: 8px;
+}
+
+
+

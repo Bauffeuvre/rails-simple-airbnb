@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class FlatsController < ApplicationController
-  before_action :set_flat, only: [:show, :edit, :update, :destroy]
+  before_action :set_flat, only: %i[show edit update destroy]
 
   def index
     @flats = Flat.all
@@ -8,14 +10,14 @@ class FlatsController < ApplicationController
   def new
     @flat = Flat.new
   end
-  
+
   def create
     @flat = Flat.new(flat_params)
     if @flat.save
-      flash[:success] = "Flat successfully created"
+      flash[:success] = 'Flat successfully created'
       redirect_to @flat
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = 'Something went wrong'
       render 'new'
     end
   end
@@ -26,10 +28,10 @@ class FlatsController < ApplicationController
 
   def update
     if @flat.update(flat_params)
-      flash[:success] = "Flat was successfully updated"
+      flash[:success] = 'Flat was successfully updated'
       redirect_to @flat
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = 'Something went wrong'
       render 'edit'
     end
   end
@@ -43,7 +45,7 @@ class FlatsController < ApplicationController
       redirect_to flats_path
     end
   end
-  
+
   private
 
   def set_flat
@@ -53,6 +55,4 @@ class FlatsController < ApplicationController
   def flat_params
     params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests)
   end
-
-  
 end

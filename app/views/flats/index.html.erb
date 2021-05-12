@@ -1,25 +1,33 @@
-<h1>All our flats</h1>
-
-<p>All <%= @flats.count %> flats</p>
-
 <div class="container">
-  <% @flats.each do |flat| %>
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title"><%= flat.name %></h5>
-        <p class="card-text"> <%= flat.address  %></p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"> <%= flat.price_per_night  %></li>
-        <li class="list-group-item"> <%= flat.number_of_guests  %></li>
-      </ul>
-      <div class="card-body">
-        <%= link_to "View", flat_path(flat) %>
-        <%= link_to "Edit", edit_flat_path(flat) %>
-        <%= link_to "Remove",  flat_path(flat), method: :delete,
-            data: { confirm: "Are you sure?" } %>
+  <div class="flat-title">
+    <h1>All our flats</h1>
+    <p>All <%= @flats.count %> flats</p>
+  </div>
+  <div class="container-body">
+    <% @flats.each do |flat| %>
+    <div class="row">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 col-lg-3">
+    <div class="card-deck">
+      <div class="card " style="width: 18rem;">
+        <img class="card-img-top" src="<%= flat.url %>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"> <%= flat.address  %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> <%= flat.price_per_night  %></li>
+          <li class="list-group-item"> <%= flat.number_of_guests  %></li>
+        </ul>
+        <div class="card-body">
+          <%= link_to "View", flat_path(flat) %>
+          <%= link_to "Edit", edit_flat_path(flat) %>
+          <%= link_to "Remove",  flat_path(flat), method: :delete,
+              data: { confirm: "Are you sure?" } %>
+        </div>
       </div>
     </div>
-  <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>

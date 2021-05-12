@@ -1,7 +1,32 @@
 // Import page-specific CSS files here.
 @import "home";
 
+// Containers
 
 .container {
+  width: 72%;
+  margin: 40, auto;
+}
+
+.container-body {
   display: flex;
+  flex-wrap: wrap;
+  margin: 40, auto;
+}
+
+.flat-title {
+  margin-left: 16px;
+  margin-top: 16px;
+}
+
+.row {
+
+}
+
+
+// Cards
+
+.card {
+  margin: 8px;
+  box-shadow: 3px 3px 10px;
 }
